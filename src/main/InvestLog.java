@@ -285,7 +285,7 @@ public class InvestLog extends javax.swing.JFrame {
             if (result == JFileChooser.APPROVE_OPTION) {
                 File file = chooser.getSelectedFile();
                 currentFileName = file.getAbsolutePath();
-                jLabel2.setText(currentFileName);
+                jLabel2.setText(file.getName());
             } else {
                 return;
             }
@@ -317,7 +317,7 @@ public class InvestLog extends javax.swing.JFrame {
         if (result == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
             currentFileName = file.getAbsolutePath();
-            jLabel2.setText(currentFileName);
+            jLabel2.setText(file.getName());
 
             try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
                 portfolio = (Portfolio) in.readObject();
